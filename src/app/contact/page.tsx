@@ -20,19 +20,18 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 98765 43210", "+91 98765 43211"],
+    details: ["+91 11111 22222"],
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["info@poplisolutions.com", "sales@poplisolutions.com"],
+    details: ["dummy@poplisolutions.com"],
   },
   {
     icon: MapPin,
     title: "Address",
     details: [
-      "123 Industrial Area, Sector-12",
-      "Gurugram, Haryana - 122001",
+      "Batala", Punjab - 143505,
     ],
   },
   {
