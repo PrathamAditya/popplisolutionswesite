@@ -30,9 +30,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: [
-      "Batala", Punjab - 143505,
-    ],
+    details: ["Batala, Punjab - 143505"],
   },
   {
     icon: Clock,
