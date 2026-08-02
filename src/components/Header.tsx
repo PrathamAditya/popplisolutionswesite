@@ -29,7 +29,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold text-primary-navy font-heading leading-tight">
-              Popli Solutions
+              Popli Solution's
             </span>
             <span className="text-[10px] font-medium text-text-secondary uppercase tracking-wider leading-tight">
               Complete Water Solutions
