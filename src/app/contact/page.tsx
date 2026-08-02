@@ -20,17 +20,17 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 11111 22222"],
+    details: ["+91 79861 26286", "+91 98032 04461"],
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["dummy@poplisolutions.com"],
+    details: ["poplisolutions@gmail.com"],
   },
   {
     icon: MapPin,
     title: "Address",
-    details: ["Batala, Punjab - 143505"],
+    details: ["D78 Guru Amardass Avenue, Airport road, Amritsar-143001"],
   },
   {
     icon: Clock,
@@ -118,150 +118,7 @@ export default function ContactPage() {
       {/* Form + Map */}
       <section className="py-20 bg-section-bg">
         <div className="max-container">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-2xl md:text-3xl font-bold font-heading text-primary-navy mb-2">
-                Send Us a Message
-              </h2>
-              <p className="text-text-secondary mb-8">
-                Fill out the form and we&apos;ll get back to you within 24 hours
-              </p>
-
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="space-y-5"
-                noValidate
-              >
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-text-primary mb-1.5"
-                    >
-                      Full Name *
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      {...register("name")}
-                      className="w-full px-4 py-3 rounded-[10px] border border-border bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent transition-all"
-                      placeholder="Your name"
-                    />
-                    {errors.name && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.name.message}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-text-primary mb-1.5"
-                    >
-                      Email Address *
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      {...register("email")}
-                      className="w-full px-4 py-3 rounded-[10px] border border-border bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent transition-all"
-                      placeholder="your@email.com"
-                    />
-                    {errors.email && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.email.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-text-primary mb-1.5"
-                    >
-                      Phone Number *
-                    </label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      {...register("phone")}
-                      className="w-full px-4 py-3 rounded-[10px] border border-border bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent transition-all"
-                      placeholder="+91 98765 43210"
-                    />
-                    {errors.phone && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.phone.message}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-text-primary mb-1.5"
-                    >
-                      Subject *
-                    </label>
-                    <input
-                      id="subject"
-                      type="text"
-                      {...register("subject")}
-                      className="w-full px-4 py-3 rounded-[10px] border border-border bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent transition-all"
-                      placeholder="How can we help?"
-                    />
-                    {errors.subject && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.subject.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-text-primary mb-1.5"
-                  >
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={5}
-                    {...register("message")}
-                    className="w-full px-4 py-3 rounded-[10px] border border-border bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent transition-all resize-none"
-                    placeholder="Tell us about your requirements..."
-                  />
-                  {errors.message && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.message.message}
-                    </p>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary-navy text-white font-semibold text-sm rounded-[10px] hover:bg-dark-navy transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message
-                      <SendHorizonal className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
-              </form>
-            </motion.div>
-
+          <div className="grid lg:grid-cols-1 gap-12">
             {/* Map */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -283,13 +140,13 @@ export default function ContactPage() {
                     Popli Solutions
                   </p>
                   <p className="text-sm text-text-secondary">
-                    123 Industrial Area, Sector-12
+                    D78 Guru Amardass Avenue
                   </p>
                   <p className="text-sm text-text-secondary mb-4">
-                    Gurugram, Haryana - 122001
+                    Airport road, Amritsar-143001
                   </p>
                   <a
-                    href="https://maps.google.com/?q=Gurugram+Haryana"
+                    href="https://maps.app.goo.gl/r4iesjU442Ngc9veA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-navy text-white text-sm font-semibold rounded-[10px] hover:bg-dark-navy transition-all"

@@ -90,16 +90,17 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-white/60 mt-0.5 shrink-0" />
                 <span className="text-sm text-white/70">
-                  123 Industrial Area, Sector-12, Gurugram, Haryana - 122001
+                  D78 Guru Amardass Avenue, Airport road, Amritsar-143001
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-white/60 shrink-0" />
-                <span className="text-sm text-white/70">+91 98765 43210</span>
+                <span className="text-sm text-white/70">+91 7986126286</span>
+                <span className="text-sm text-white/70">+91 9803204461</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-white/60 shrink-0" />
-                <span className="text-sm text-white/70">info@poplisolutions.com</span>
+                <span className="text-sm text-white/70">poplisolutions@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-white/60 mt-0.5 shrink-0" />
