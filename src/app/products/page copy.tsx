@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Droplets,
@@ -23,21 +22,16 @@ const categories = [
   { id: "pressure-pumps", label: "Pressure Pumps", icon: Wind },
   { id: "water-filters", label: "Water Filters", icon: Filter },
   { id: "heat-pumps", label: "Heat Pumps", icon: Thermometer },
-  { id: "whirlpool-bathtub", label: "Whirlpool Bathtub", icon: Bath },
+  { id: "steam-bath", label: "Steam Bath", icon: Bath },
   { id: "sauna-bath", label: "Sauna Bath", icon: Bath },
   { id: "water-harvesting", label: "Water Harvesting", icon: CloudRain },
   { id: "stp-solutions", label: "STP Solutions", icon: Recycle },
 ];
 
-type Product = {
-  title: string;
-  description: string;
-  features: string[];
-  icon: React.ElementType;
-  imageSrc: string;
-};
-
-const productData: Record<string, Product> = {
+const productData: Record<
+  string,
+    { title: string; description: string; features: string[]; image: string; imageSrc: string }
+> = {
   "water-tanks": {
     title: "Stainless Steel Water Tanks",
     description:
@@ -50,8 +44,7 @@ const productData: Record<string, Product> = {
       "Easy installation and maintenance",
       "10-year warranty",
     ],
-    icon: Droplets,
-    imageSrc: "/products/water-tanks-img.jpeg",
+    image: "water-tank",
   },
   "swimming-pools": {
     title: "Swimming Pools",
@@ -65,8 +58,7 @@ const productData: Record<string, Product> = {
       "Heating systems available",
       "Regular maintenance packages",
     ],
-    icon: Waves,
-    imageSrc: "/products/swimming-pools-img.jpeg",
+    image: "pool",
   },
   "pressure-pumps": {
     title: "Pressure Pumps",
@@ -78,9 +70,9 @@ const productData: Record<string, Product> = {
       "Quiet operation",
       "Corrosion-resistant body",
       "Thermal overload protection",
+      "2-year warranty",
     ],
-    icon: Wind,
-    imageSrc: "/products/pressure-pumps-img.jpeg",
+    image: "pump",
   },
   "water-filters": {
     title: "Water Filters & Purification Systems",
@@ -94,8 +86,7 @@ const productData: Record<string, Product> = {
       "Food-grade plastic components",
       "Annual maintenance contracts",
     ],
-    icon: Filter,
-    imageSrc: "/products/water-filters-img.jpeg",
+    image: "filter",
   },
   "heat-pumps": {
     title: "Heat Pumps",
@@ -109,26 +100,22 @@ const productData: Record<string, Product> = {
       "Eco-friendly refrigerant",
       "Suitable for pools & homes",
     ],
-    icon: Thermometer,
-    imageSrc: "/products/heat-pumps-img.jpeg",
+    image: "heat-pump",
   },
-"whirlpool-bathtub": {
-  title: "Whirlpool Bathtub",
-  description:
-    "Experience the perfect blend of comfort and luxury with our whirlpool bathtub. Designed with high-performance massage jets and premium acrylic construction, it delivers a soothing spa-like experience while enhancing the elegance of any modern bathroom.",
-
-  features: [
-    "High-performance hydro massage jets",
-    "Premium acrylic construction",
-    "Ergonomic and spacious design",
-    "Easy-to-clean, stain-resistant surface",
-    "Durable and corrosion-resistant fittings",
-    "Ideal for residential and luxury bathrooms",
-  ],
-
-  icon: Bath,
-  imageSrc: "/products/whirlpool-bathtub.jpeg",
-},
+  "steam-bath": {
+    title: "Steam Bath Systems",
+    description:
+      "Premium steam bath systems for luxurious spa experiences at home or in commercial settings. Features digital controls, rapid steam generation, and safety sensors.",
+    features: [
+      "Digital touch control panel",
+      "Rapid steam generation",
+      "Auto-cleaning system",
+      "Aromatherapy compatible",
+      "Safety auto shut-off",
+      "Compact design",
+    ],
+    image: "steam",
+  },
   "sauna-bath": {
     title: "Sauna Bath Systems",
     description:
@@ -141,8 +128,9 @@ const productData: Record<string, Product> = {
       "Built-in audio system",
       "Quick heat-up time",
     ],
-    icon: Bath,
+    image: "sauna-bath-img",
     imageSrc: "/products/sauna-bath-img.jpg",
+    // image: "sauna",
   },
   "water-harvesting": {
     title: "Water Harvesting Systems",
@@ -156,8 +144,7 @@ const productData: Record<string, Product> = {
       "Custom designs for any property",
       "Government subsidy eligible",
     ],
-    icon: CloudRain,
-    imageSrc: "/products/water-harvesting-img.jpeg",
+    image: "harvesting",
   },
   "stp-solutions": {
     title: "STP Solutions",
@@ -171,41 +158,9 @@ const productData: Record<string, Product> = {
       "Remote monitoring capability",
       "CPCB compliant",
     ],
-    icon: Recycle,
-    imageSrc: "/products/stp-solutions-img.jpeg",
+    image: "stp",
   },
 };
-
-function ProductImage({
-  src,
-  alt,
-  IconFallback,
-}: {
-  src: string;
-  alt: string;
-  IconFallback: React.ElementType;
-}) {
-  const [errored, setErrored] = useState(false);
-
-  if (errored) {
-    return (
-      <div className="text-center">
-        <IconFallback className="w-20 h-20 text-primary-navy mx-auto mb-3" />
-        <p className="text-sm font-semibold text-primary-navy">{alt}</p>
-      </div>
-    );
-  }
-
-  return (
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      className="object-cover"
-      onError={() => setErrored(true)}
-    />
-  );
-}
 
 export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState("water-tanks");
@@ -285,12 +240,50 @@ export default function ProductsPage() {
                 >
                   <div className="grid lg:grid-cols-2 gap-8 mb-8">
                     {/* Product Image */}
-                    <div className="relative rounded-[16px] overflow-hidden bg-gradient-to-br from-light-blue to-white border border-border/50 shadow-md h-72 lg:h-96 flex items-center justify-center">
-                      <ProductImage
-                        src={activeProduct.imageSrc}
-                        alt={activeProduct.title}
-                        IconFallback={activeProduct.icon}
-                      />
+                    <div className="rounded-[16px] overflow-hidden bg-gradient-to-br from-light-blue to-white border border-border/50 shadow-md h-72 lg:h-96 flex items-center justify-center"
+                    >
+                       <Image
+    src={activeProduct.imageSrc}
+    alt={activeProduct.title}
+    fill
+    className="object-cover"
+    onError={(e) => {
+      // hide broken image, fallback div below will show
+      (e.target as HTMLImageElement).style.display = "none";
+    }}
+  />
+                      <div className="text-center">
+                        {activeProduct.image === "water-tank" && (
+                          <Droplets className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        {activeProduct.image === "pool" && (
+                          <Waves className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        {activeProduct.image === "pump" && (
+                          <Wind className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        {activeProduct.image === "filter" && (
+                          <Filter className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        {activeProduct.image === "heat-pump" && (
+                          <Thermometer className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        {activeProduct.image === "steam" && (
+                          <Bath className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        {activeProduct.image === "sauna" && (
+                          <Bath className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        {activeProduct.image === "harvesting" && (
+                          <CloudRain className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        {activeProduct.image === "stp" && (
+                          <Recycle className="w-20 h-20 text-primary-navy mx-auto mb-3" />
+                        )}
+                        <p className="text-sm font-semibold text-primary-navy">
+                          {activeProduct.title}
+                        </p>
+                      </div>
                     </div>
 
                     {/* Product Info */}

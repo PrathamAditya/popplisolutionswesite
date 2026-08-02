@@ -7,42 +7,42 @@ import Link from "next/link";
 const reviews = [
   {
     name: "Rajesh Kumar",
-    location: "Delhi",
+    location: "Qadian",
     rating: 5,
     text: "Excellent service! Installed a 2000L SS water tank and pressure pump. The team was professional and completed the installation in one day. Highly recommended.",
     project: "Water Tank Installation",
   },
   {
     name: "Priya Sharma",
-    location: "Gurugram",
+    location: "Batala",
     rating: 5,
     text: "We got our swimming pool designed and built by Popli Solutions. The quality of work is outstanding. The filtration system works perfectly. Thank you for the wonderful job!",
     project: "Swimming Pool Construction",
   },
   {
     name: "Amit Singh",
-    location: "Noida",
+    location: "Batala",
     rating: 5,
     text: "Installed a complete water filtration system for our factory. The team did a thorough assessment and provided the perfect solution. Great after-sales support too.",
     project: "Industrial Water Filter",
   },
   {
     name: "Sunil Mehta",
-    location: "Faridabad",
+    location: "Gurdaspur",
     rating: 4,
     text: "Very happy with the heat pump installation. It's been running efficiently for over a year now. The energy savings are noticeable. Would definitely recommend.",
     project: "Heat Pump Installation",
   },
   {
     name: "Anita Verma",
-    location: "Ghaziabad",
+    location: "Amritsar",
     rating: 5,
     text: "The steam bath installation at our home is amazing! Professional team, quality products, and excellent customer service. Popli Solutions delivered exactly what they promised.",
     project: "Steam Bath Installation",
   },
   {
     name: "Vikram Patel",
-    location: "Delhi",
+    location: "Amritsar",
     rating: 5,
     text: "We engaged Popli Solutions for our residential complex STP. They designed an efficient system that meets all environmental norms. Very satisfied with their expertise.",
     project: "STP Installation",
@@ -99,7 +99,7 @@ export default function ReviewsPage() {
               ))}
             </div>
             <div className="text-4xl font-bold font-heading text-primary-navy mb-1">
-              4.9 / 5.0
+              4.7 / 5.0
             </div>
             <p className="text-text-secondary">
               Based on 500+ reviews from our valued customers
@@ -205,7 +205,7 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA
       <section className="py-20 bg-accent-blue text-white">
         <div className="max-container text-center">
           <motion.div
@@ -228,7 +228,7 @@ export default function ReviewsPage() {
             </Link>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

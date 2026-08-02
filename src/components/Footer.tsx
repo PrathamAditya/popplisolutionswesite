@@ -37,7 +37,7 @@ export default function Footer() {
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
                 { label: "Products", href: "/products" },
-                { label: "Projects", href: "/projects" },
+                // { label: "Projects", href: "/projects" },
                 { label: "Reviews", href: "/reviews" },
                 { label: "Contact Us", href: "/contact" },
               ].map((item) => (
@@ -105,7 +105,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-white/60 mt-0.5 shrink-0" />
                 <span className="text-sm text-white/70">
-                  Mon - Sat: 9:00 AM - 7:00 PM
+                  Mon - Sat: 11:00 AM - 6:00 PM
                 </span>
               </li>
             </ul>

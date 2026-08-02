@@ -5,38 +5,6 @@ import { Shield, Eye, Heart, Target, Award, Users, Wrench, HeadphonesIcon } from
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const timeline = [
-  {
-    year: "2014",
-    title: "Founded",
-    description: "Popli Solutions established with a vision to provide premium water solutions.",
-  },
-  {
-    year: "2016",
-    title: "Expansion",
-    description: "Expanded operations to serve residential and commercial clients across Delhi NCR.",
-  },
-  {
-    year: "2018",
-    title: "Product Range",
-    description: "Launched comprehensive product line including tanks, pumps, and filtration systems.",
-  },
-  {
-    year: "2020",
-    title: "ISO Certification",
-    description: "Achieved ISO 9001:2015 certification for quality management systems.",
-  },
-  {
-    year: "2023",
-    title: "Pan-India Presence",
-    description: "Extended services to 15+ states with 500+ successful projects completed.",
-  },
-  {
-    year: "2025",
-    title: "Innovation Hub",
-    description: "Opened R&D center focused on sustainable water solutions and smart technologies.",
-  },
-];
 
 const values = [
   {
@@ -108,15 +76,16 @@ export default function AboutPage() {
                 India&apos;s Trusted Water Solutions Provider
               </h2>
               <p className="text-text-secondary leading-relaxed mb-4">
-                Popli Solutions has been at the forefront of the water solutions industry since 2014,
-                providing premium quality products and services to residential, commercial, and industrial
-                clients across India.
+                Popli Solutions has been providing trusted water solutions since 2016, serving residential, commercial, and industrial clients across India. 
+                We specialize in premium water storage and treatment solutions, delivering high-quality products backed by expert guidance and reliable service.
+                With over a decade of experience, our commitment to quality, innovation, and customer satisfaction continues to drive us as we deliver efficient,
+                customized water solutions.
               </p>
-              <p className="text-text-secondary leading-relaxed mb-6">
+              {/* <p className="text-text-secondary leading-relaxed mb-6">
                 From stainless steel water tanks to advanced water treatment systems, we offer
                 comprehensive solutions designed to meet the highest standards of quality, durability,
                 and performance.
-              </p>
+              </p> */}
               <Link
                 href="/products"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary-navy text-white font-semibold text-sm rounded-[10px] hover:bg-dark-navy transition-all"
@@ -221,63 +190,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Journey Timeline */}
-      <section className="py-20 bg-section-bg">
-        <div className="max-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary-navy mb-4">
-              Our Journey
-            </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
-              Milestones that have shaped our story
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-border hidden md:block" />
-
-            <div className="space-y-8">
-              {timeline.map((item, index) => (
-                <motion.div
-                  key={item.year}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className={`relative flex flex-col md:flex-row items-start gap-6 ${
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-                >
-                  {/* Content */}
-                  <div
-                    className={`flex-1 p-6 rounded-[16px] bg-white border border-border/60 shadow-sm ${
-                      index % 2 === 0 ? "md:text-right" : "md:text-left"
-                    }`}
-                  >
-                    <span className="text-sm font-bold text-accent-blue">{item.year}</span>
-                    <h3 className="text-lg font-bold font-heading text-primary-navy mt-1 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-text-secondary">{item.description}</p>
-                  </div>
-
-                  {/* Center dot */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary-navy border-4 border-white shadow z-10" />
-
-                  {/* Spacer for alignment */}
-                  <div className="flex-1 hidden md:block" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-20 bg-accent-blue text-white">

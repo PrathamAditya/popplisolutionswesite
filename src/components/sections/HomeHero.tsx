@@ -35,7 +35,7 @@ export default function HomeHero() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-light-blue rounded-full text-primary-navy text-sm font-medium mb-6">
                 <Droplets className="w-4 h-4" />
-                <span>Trusted Since 2014</span>
+                <span>Trusted Since 2016</span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold font-heading text-primary-navy leading-[1.1] tracking-tight mb-6">
